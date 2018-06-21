@@ -1,0 +1,14 @@
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Debug\ScheduleManager.exe.config
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Debug\ScheduleManager.exe
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Debug\ScheduleManager.pdb
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.csprojAssemblyReference.cache
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.Form1.resources
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.Properties.Resources.resources
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.csproj.GenerateResource.cache
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.csproj.CoreCompileInputs.cache
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.exe
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.pdb
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Debug\MaterialSkin.dll
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Debug\ScheduleManager.csproj.CopyComplete
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Debug\db.mdf
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Debug\db_log.ldf

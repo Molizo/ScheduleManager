@@ -1,0 +1,13 @@
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Release\db.mdf
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Release\db_log.ldf
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Release\ScheduleManager.exe.config
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Release\ScheduleManager.exe
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Release\ScheduleManager.pdb
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\bin\Release\MaterialSkin.dll
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.Form1.resources
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.Properties.Resources.resources
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.csproj.GenerateResource.cache
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.csproj.CoreCompileInputs.cache
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.csproj.CopyComplete
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.exe
+C:\Users\Mihnea Visoiu\source\repos\ScheduleManager\ScheduleManager\obj\Release\ScheduleManager.pdb
