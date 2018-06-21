@@ -19,14 +19,17 @@ namespace ScheduleManager
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dbDataSet.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.dbDataSet.Customers);
-            // TODO: This line of code loads data into the 'dbDataSet.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.dbDataSet.Customers);
-            // TODO: This line of code loads data into the 'dbDataSet.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.dbDataSet.Customers);
-
-            this.customersTableAdapter.Fill(this.dbDataSet.Customers);
+            // TODO: This line of code loads data into the 'dbDataSet.friday' table. You can move, or remove it, as needed.
+            this.fridayTableAdapter.Fill(this.dbDataSet.friday);
+            // TODO: This line of code loads data into the 'dbDataSet.thursday' table. You can move, or remove it, as needed.
+            this.thursdayTableAdapter.Fill(this.dbDataSet.thursday);
+            // TODO: This line of code loads data into the 'dbDataSet.wednesday' table. You can move, or remove it, as needed.
+            this.wednesdayTableAdapter.Fill(this.dbDataSet.wednesday);
+            // TODO: This line of code loads data into the 'dbDataSet.tuesday' table. You can move, or remove it, as needed.
+            this.tuesdayTableAdapter.Fill(this.dbDataSet.tuesday);
+            // TODO: This line of code loads data into the 'dbDataSet.monday' table. You can move, or remove it, as needed.
+            this.mondayTableAdapter.Fill(this.dbDataSet.monday);
+            this.customersTableAdapter.Fill(this.dbDataSet.customers);
             this.Text = Application.ProductName;
             tabControl1.Appearance = TabAppearance.FlatButtons;
             tabControl1.ItemSize = new Size(0, 1);
@@ -35,7 +38,7 @@ namespace ScheduleManager
         
         private void AddCustomerButton_Click(object sender,EventArgs e)
         {
-            tabControl1.SelectedTab = addCustomerTab;
+            
         }
 
         private void ViewCustomerDataButton_Click(object sender, EventArgs e)
@@ -53,13 +56,6 @@ namespace ScheduleManager
             tabControl1.SelectedTab = presenceTab;
         }
 
-        private void tableBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.customersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dbDataSet);
-        }
-
         private void SearchCustomerField_click(object sender, EventArgs e)
         {
             toolStripTextBox1.Text = String.Empty;
@@ -72,6 +68,11 @@ namespace ScheduleManager
             this.customersBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dbDataSet);
 
+        }
+
+        private void mondayDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine(mondayDataGridView.SelectedCells);
         }
     }
 }
