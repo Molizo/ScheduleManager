@@ -33,5 +33,17 @@ namespace ScheduleManager.Properties {
                 return ((string)(this["dbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long CurrentID {
+            get {
+                return ((long)(this["CurrentID"]));
+            }
+            set {
+                this["CurrentID"] = value;
+            }
+        }
     }
 }

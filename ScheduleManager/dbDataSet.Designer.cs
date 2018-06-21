@@ -454,8 +454,6 @@ namespace ScheduleManager {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class customersDataTable : global::System.Data.TypedTableBase<customersRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn columnNume_Client;
             
             private global::System.Data.DataColumn columnTelefon_Client;
@@ -475,6 +473,8 @@ namespace ScheduleManager {
             private global::System.Data.DataColumn columnIntrare_7;
             
             private global::System.Data.DataColumn columnIntrare_8;
+            
+            private global::System.Data.DataColumn columnID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -507,14 +507,6 @@ namespace ScheduleManager {
             protected customersDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -599,6 +591,14 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -634,10 +634,9 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public customersRow AddcustomersRow(int ID, string Nume_Client, string Telefon_Client, System.DateTime Intrare_1, System.DateTime Intrare_2, System.DateTime Intrare_3, System.DateTime Intrare_4, System.DateTime Intrare_5, System.DateTime Intrare_6, System.DateTime Intrare_7, System.DateTime Intrare_8) {
+            public customersRow AddcustomersRow(string Nume_Client, string Telefon_Client, System.DateTime Intrare_1, System.DateTime Intrare_2, System.DateTime Intrare_3, System.DateTime Intrare_4, System.DateTime Intrare_5, System.DateTime Intrare_6, System.DateTime Intrare_7, System.DateTime Intrare_8, int ID) {
                 customersRow rowcustomersRow = ((customersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         Nume_Client,
                         Telefon_Client,
                         Intrare_1,
@@ -647,7 +646,8 @@ namespace ScheduleManager {
                         Intrare_5,
                         Intrare_6,
                         Intrare_7,
-                        Intrare_8};
+                        Intrare_8,
+                        ID};
                 rowcustomersRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcustomersRow);
                 return rowcustomersRow;
@@ -677,7 +677,6 @@ namespace ScheduleManager {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this.columnNume_Client = base.Columns["Nume Client"];
                 this.columnTelefon_Client = base.Columns["Telefon Client"];
                 this.columnIntrare_1 = base.Columns["Intrare 1"];
@@ -688,13 +687,12 @@ namespace ScheduleManager {
                 this.columnIntrare_6 = base.Columns["Intrare 6"];
                 this.columnIntrare_7 = base.Columns["Intrare 7"];
                 this.columnIntrare_8 = base.Columns["Intrare 8"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this.columnNume_Client = new global::System.Data.DataColumn("Nume Client", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNume_Client);
                 this.columnTelefon_Client = new global::System.Data.DataColumn("Telefon Client", typeof(string), null, global::System.Data.MappingType.Element);
@@ -715,12 +713,14 @@ namespace ScheduleManager {
                 base.Columns.Add(this.columnIntrare_7);
                 this.columnIntrare_8 = new global::System.Data.DataColumn("Intrare 8", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIntrare_8);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this.columnNume_Client.MaxLength = 2147483647;
                 this.columnTelefon_Client.MaxLength = 2147483647;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -854,8 +854,6 @@ namespace ScheduleManager {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class fridayDataTable : global::System.Data.TypedTableBase<fridayRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn _column11_30___12_30;
             
             private global::System.Data.DataColumn _column17_30___18_30;
@@ -865,6 +863,8 @@ namespace ScheduleManager {
             private global::System.Data.DataColumn _column19_30___20_30;
             
             private global::System.Data.DataColumn _column20_30___21_30;
+            
+            private global::System.Data.DataColumn columnID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -897,14 +897,6 @@ namespace ScheduleManager {
             protected fridayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -949,6 +941,14 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -984,15 +984,15 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public fridayRow AddfridayRow(int ID, string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30) {
+            public fridayRow AddfridayRow(string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30, int ID) {
                 fridayRow rowfridayRow = ((fridayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         _11_30___12_30,
                         _17_30___18_30,
                         _18_30___19_30,
                         _19_30___20_30,
-                        _20_30___21_30};
+                        _20_30___21_30,
+                        ID};
                 rowfridayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfridayRow);
                 return rowfridayRow;
@@ -1022,19 +1022,17 @@ namespace ScheduleManager {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this._column11_30___12_30 = base.Columns["11:30 - 12:30"];
                 this._column17_30___18_30 = base.Columns["17:30 - 18:30"];
                 this._column18_30___19_30 = base.Columns["18:30 - 19:30"];
                 this._column19_30___20_30 = base.Columns["19:30 - 20:30"];
                 this._column20_30___21_30 = base.Columns["20:30 - 21:30"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this._column11_30___12_30 = new global::System.Data.DataColumn("11:30 - 12:30", typeof(string), null, global::System.Data.MappingType.Element);
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column11_30___12_30");
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_UserColumnName", "11:30 - 12:30");
@@ -1055,15 +1053,17 @@ namespace ScheduleManager {
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column20_30___21_30");
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_UserColumnName", "20:30 - 21:30");
                 base.Columns.Add(this._column20_30___21_30);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this._column11_30___12_30.MaxLength = 2147483647;
                 this._column17_30___18_30.MaxLength = 2147483647;
                 this._column18_30___19_30.MaxLength = 2147483647;
                 this._column19_30___20_30.MaxLength = 2147483647;
                 this._column20_30___21_30.MaxLength = 2147483647;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1197,8 +1197,6 @@ namespace ScheduleManager {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class mondayDataTable : global::System.Data.TypedTableBase<mondayRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn _column11_30___12_30;
             
             private global::System.Data.DataColumn _column17_30___18_30;
@@ -1208,6 +1206,8 @@ namespace ScheduleManager {
             private global::System.Data.DataColumn _column19_30___20_30;
             
             private global::System.Data.DataColumn _column20_30___21_30;
+            
+            private global::System.Data.DataColumn columnID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1240,14 +1240,6 @@ namespace ScheduleManager {
             protected mondayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1292,6 +1284,14 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1327,15 +1327,15 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public mondayRow AddmondayRow(int ID, string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30) {
+            public mondayRow AddmondayRow(string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30, int ID) {
                 mondayRow rowmondayRow = ((mondayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         _11_30___12_30,
                         _17_30___18_30,
                         _18_30___19_30,
                         _19_30___20_30,
-                        _20_30___21_30};
+                        _20_30___21_30,
+                        ID};
                 rowmondayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowmondayRow);
                 return rowmondayRow;
@@ -1365,19 +1365,17 @@ namespace ScheduleManager {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this._column11_30___12_30 = base.Columns["11:30 - 12:30"];
                 this._column17_30___18_30 = base.Columns["17:30 - 18:30"];
                 this._column18_30___19_30 = base.Columns["18:30 - 19:30"];
                 this._column19_30___20_30 = base.Columns["19:30 - 20:30"];
                 this._column20_30___21_30 = base.Columns["20:30 - 21:30"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this._column11_30___12_30 = new global::System.Data.DataColumn("11:30 - 12:30", typeof(string), null, global::System.Data.MappingType.Element);
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column11_30___12_30");
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_UserColumnName", "11:30 - 12:30");
@@ -1398,15 +1396,17 @@ namespace ScheduleManager {
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column20_30___21_30");
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_UserColumnName", "20:30 - 21:30");
                 base.Columns.Add(this._column20_30___21_30);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this._column11_30___12_30.MaxLength = 2147483647;
                 this._column17_30___18_30.MaxLength = 2147483647;
                 this._column18_30___19_30.MaxLength = 2147483647;
                 this._column19_30___20_30.MaxLength = 2147483647;
                 this._column20_30___21_30.MaxLength = 2147483647;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1540,8 +1540,6 @@ namespace ScheduleManager {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class thursdayDataTable : global::System.Data.TypedTableBase<thursdayRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn _column11_30___12_30;
             
             private global::System.Data.DataColumn _column17_30___18_30;
@@ -1551,6 +1549,8 @@ namespace ScheduleManager {
             private global::System.Data.DataColumn _column19_30___20_30;
             
             private global::System.Data.DataColumn _column20_30___21_30;
+            
+            private global::System.Data.DataColumn columnID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1583,14 +1583,6 @@ namespace ScheduleManager {
             protected thursdayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1635,6 +1627,14 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1670,15 +1670,15 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public thursdayRow AddthursdayRow(int ID, string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30) {
+            public thursdayRow AddthursdayRow(string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30, int ID) {
                 thursdayRow rowthursdayRow = ((thursdayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         _11_30___12_30,
                         _17_30___18_30,
                         _18_30___19_30,
                         _19_30___20_30,
-                        _20_30___21_30};
+                        _20_30___21_30,
+                        ID};
                 rowthursdayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowthursdayRow);
                 return rowthursdayRow;
@@ -1708,19 +1708,17 @@ namespace ScheduleManager {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this._column11_30___12_30 = base.Columns["11:30 - 12:30"];
                 this._column17_30___18_30 = base.Columns["17:30 - 18:30"];
                 this._column18_30___19_30 = base.Columns["18:30 - 19:30"];
                 this._column19_30___20_30 = base.Columns["19:30 - 20:30"];
                 this._column20_30___21_30 = base.Columns["20:30 - 21:30"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this._column11_30___12_30 = new global::System.Data.DataColumn("11:30 - 12:30", typeof(string), null, global::System.Data.MappingType.Element);
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column11_30___12_30");
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_UserColumnName", "11:30 - 12:30");
@@ -1741,15 +1739,17 @@ namespace ScheduleManager {
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column20_30___21_30");
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_UserColumnName", "20:30 - 21:30");
                 base.Columns.Add(this._column20_30___21_30);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this._column11_30___12_30.MaxLength = 2147483647;
                 this._column17_30___18_30.MaxLength = 2147483647;
                 this._column18_30___19_30.MaxLength = 2147483647;
                 this._column19_30___20_30.MaxLength = 2147483647;
                 this._column20_30___21_30.MaxLength = 2147483647;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1883,8 +1883,6 @@ namespace ScheduleManager {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class tuesdayDataTable : global::System.Data.TypedTableBase<tuesdayRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn _column11_30___12_30;
             
             private global::System.Data.DataColumn _column17_30___18_30;
@@ -1894,6 +1892,8 @@ namespace ScheduleManager {
             private global::System.Data.DataColumn _column19_30___20_30;
             
             private global::System.Data.DataColumn _column20_30___21_30;
+            
+            private global::System.Data.DataColumn columnID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -1926,14 +1926,6 @@ namespace ScheduleManager {
             protected tuesdayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1978,6 +1970,14 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2013,15 +2013,15 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public tuesdayRow AddtuesdayRow(int ID, string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30) {
+            public tuesdayRow AddtuesdayRow(string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30, int ID) {
                 tuesdayRow rowtuesdayRow = ((tuesdayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         _11_30___12_30,
                         _17_30___18_30,
                         _18_30___19_30,
                         _19_30___20_30,
-                        _20_30___21_30};
+                        _20_30___21_30,
+                        ID};
                 rowtuesdayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtuesdayRow);
                 return rowtuesdayRow;
@@ -2051,19 +2051,17 @@ namespace ScheduleManager {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this._column11_30___12_30 = base.Columns["11:30 - 12:30"];
                 this._column17_30___18_30 = base.Columns["17:30 - 18:30"];
                 this._column18_30___19_30 = base.Columns["18:30 - 19:30"];
                 this._column19_30___20_30 = base.Columns["19:30 - 20:30"];
                 this._column20_30___21_30 = base.Columns["20:30 - 21:30"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this._column11_30___12_30 = new global::System.Data.DataColumn("11:30 - 12:30", typeof(string), null, global::System.Data.MappingType.Element);
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column11_30___12_30");
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_UserColumnName", "11:30 - 12:30");
@@ -2084,15 +2082,17 @@ namespace ScheduleManager {
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column20_30___21_30");
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_UserColumnName", "20:30 - 21:30");
                 base.Columns.Add(this._column20_30___21_30);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this._column11_30___12_30.MaxLength = 2147483647;
                 this._column17_30___18_30.MaxLength = 2147483647;
                 this._column18_30___19_30.MaxLength = 2147483647;
                 this._column19_30___20_30.MaxLength = 2147483647;
                 this._column20_30___21_30.MaxLength = 2147483647;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2226,8 +2226,6 @@ namespace ScheduleManager {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class wednesdayDataTable : global::System.Data.TypedTableBase<wednesdayRow> {
             
-            private global::System.Data.DataColumn columnID;
-            
             private global::System.Data.DataColumn _column11_30___12_30;
             
             private global::System.Data.DataColumn _column17_30___18_30;
@@ -2237,6 +2235,8 @@ namespace ScheduleManager {
             private global::System.Data.DataColumn _column19_30___20_30;
             
             private global::System.Data.DataColumn _column20_30___21_30;
+            
+            private global::System.Data.DataColumn columnID;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -2269,14 +2269,6 @@ namespace ScheduleManager {
             protected wednesdayDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IDColumn {
-                get {
-                    return this.columnID;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2321,6 +2313,14 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn IDColumn {
+                get {
+                    return this.columnID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2356,15 +2356,15 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public wednesdayRow AddwednesdayRow(int ID, string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30) {
+            public wednesdayRow AddwednesdayRow(string _11_30___12_30, string _17_30___18_30, string _18_30___19_30, string _19_30___20_30, string _20_30___21_30, int ID) {
                 wednesdayRow rowwednesdayRow = ((wednesdayRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        ID,
                         _11_30___12_30,
                         _17_30___18_30,
                         _18_30___19_30,
                         _19_30___20_30,
-                        _20_30___21_30};
+                        _20_30___21_30,
+                        ID};
                 rowwednesdayRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowwednesdayRow);
                 return rowwednesdayRow;
@@ -2394,19 +2394,17 @@ namespace ScheduleManager {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnID = base.Columns["ID"];
                 this._column11_30___12_30 = base.Columns["11:30 - 12:30"];
                 this._column17_30___18_30 = base.Columns["17:30 - 18:30"];
                 this._column18_30___19_30 = base.Columns["18:30 - 19:30"];
                 this._column19_30___20_30 = base.Columns["19:30 - 20:30"];
                 this._column20_30___21_30 = base.Columns["20:30 - 21:30"];
+                this.columnID = base.Columns["ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnID);
                 this._column11_30___12_30 = new global::System.Data.DataColumn("11:30 - 12:30", typeof(string), null, global::System.Data.MappingType.Element);
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column11_30___12_30");
                 this._column11_30___12_30.ExtendedProperties.Add("Generator_UserColumnName", "11:30 - 12:30");
@@ -2427,15 +2425,17 @@ namespace ScheduleManager {
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_column20_30___21_30");
                 this._column20_30___21_30.ExtendedProperties.Add("Generator_UserColumnName", "20:30 - 21:30");
                 base.Columns.Add(this._column20_30___21_30);
+                this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
-                this.columnID.AllowDBNull = false;
-                this.columnID.Unique = true;
                 this._column11_30___12_30.MaxLength = 2147483647;
                 this._column17_30___18_30.MaxLength = 2147483647;
                 this._column18_30___19_30.MaxLength = 2147483647;
                 this._column19_30___20_30.MaxLength = 2147483647;
                 this._column20_30___21_30.MaxLength = 2147483647;
+                this.columnID.AllowDBNull = false;
+                this.columnID.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2574,17 +2574,6 @@ namespace ScheduleManager {
             internal customersRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablecustomers = ((customersDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablecustomers.IDColumn]));
-                }
-                set {
-                    this[this.tablecustomers.IDColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2749,6 +2738,17 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablecustomers.IDColumn]));
+                }
+                set {
+                    this[this.tablecustomers.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsNume_ClientNull() {
                 return this.IsNull(this.tablecustomers.Nume_ClientColumn);
             }
@@ -2884,17 +2884,6 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablefriday.IDColumn]));
-                }
-                set {
-                    this[this.tablefriday.IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string _11_30___12_30 {
                 get {
                     try {
@@ -2975,6 +2964,17 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablefriday.IDColumn]));
+                }
+                set {
+                    this[this.tablefriday.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is_11_30___12_30Null() {
                 return this.IsNull(this.tablefriday._11_30___12_30Column);
             }
@@ -3046,17 +3046,6 @@ namespace ScheduleManager {
             internal mondayRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablemonday = ((mondayDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablemonday.IDColumn]));
-                }
-                set {
-                    this[this.tablemonday.IDColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3141,6 +3130,17 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablemonday.IDColumn]));
+                }
+                set {
+                    this[this.tablemonday.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is_11_30___12_30Null() {
                 return this.IsNull(this.tablemonday._11_30___12_30Column);
             }
@@ -3212,17 +3212,6 @@ namespace ScheduleManager {
             internal thursdayRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablethursday = ((thursdayDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablethursday.IDColumn]));
-                }
-                set {
-                    this[this.tablethursday.IDColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3307,6 +3296,17 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablethursday.IDColumn]));
+                }
+                set {
+                    this[this.tablethursday.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is_11_30___12_30Null() {
                 return this.IsNull(this.tablethursday._11_30___12_30Column);
             }
@@ -3378,17 +3378,6 @@ namespace ScheduleManager {
             internal tuesdayRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tabletuesday = ((tuesdayDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tabletuesday.IDColumn]));
-                }
-                set {
-                    this[this.tabletuesday.IDColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3473,6 +3462,17 @@ namespace ScheduleManager {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tabletuesday.IDColumn]));
+                }
+                set {
+                    this[this.tabletuesday.IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool Is_11_30___12_30Null() {
                 return this.IsNull(this.tabletuesday._11_30___12_30Column);
             }
@@ -3544,17 +3544,6 @@ namespace ScheduleManager {
             internal wednesdayRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablewednesday = ((wednesdayDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ID {
-                get {
-                    return ((int)(this[this.tablewednesday.IDColumn]));
-                }
-                set {
-                    this[this.tablewednesday.IDColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3634,6 +3623,17 @@ namespace ScheduleManager {
                 }
                 set {
                     this[this.tablewednesday._20_30___21_30Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int ID {
+                get {
+                    return ((int)(this[this.tablewednesday.IDColumn]));
+                }
+                set {
+                    this[this.tablewednesday.IDColumn] = value;
                 }
             }
             
@@ -4027,7 +4027,6 @@ namespace ScheduleManager.dbDataSetTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "customers";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("Nume Client", "Nume Client");
             tableMapping.ColumnMappings.Add("Telefon Client", "Telefon Client");
             tableMapping.ColumnMappings.Add("Intrare 1", "Intrare 1");
@@ -4038,12 +4037,12 @@ namespace ScheduleManager.dbDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Intrare 6", "Intrare 6");
             tableMapping.ColumnMappings.Add("Intrare 7", "Intrare 7");
             tableMapping.ColumnMappings.Add("Intrare 8", "Intrare 8");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[customers] WHERE (([ID] = @Original_ID) AND ((@IsNull_Intrare_1 = 1 AND [Intrare 1] IS NULL) OR ([Intrare 1] = @Original_Intrare_1)) AND ((@IsNull_Intrare_2 = 1 AND [Intrare 2] IS NULL) OR ([Intrare 2] = @Original_Intrare_2)) AND ((@IsNull_Intrare_3 = 1 AND [Intrare 3] IS NULL) OR ([Intrare 3] = @Original_Intrare_3)) AND ((@IsNull_Intrare_4 = 1 AND [Intrare 4] IS NULL) OR ([Intrare 4] = @Original_Intrare_4)) AND ((@IsNull_Intrare_5 = 1 AND [Intrare 5] IS NULL) OR ([Intrare 5] = @Original_Intrare_5)) AND ((@IsNull_Intrare_6 = 1 AND [Intrare 6] IS NULL) OR ([Intrare 6] = @Original_Intrare_6)) AND ((@IsNull_Intrare_7 = 1 AND [Intrare 7] IS NULL) OR ([Intrare 7] = @Original_Intrare_7)) AND ((@IsNull_Intrare_8 = 1 AND [Intrare 8] IS NULL) OR ([Intrare 8] = @Original_Intrare_8)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [customers] WHERE (((@IsNull_Intrare_1 = 1 AND [Intrare 1] IS NULL) OR ([Intrare 1] = @Original_Intrare_1)) AND ((@IsNull_Intrare_2 = 1 AND [Intrare 2] IS NULL) OR ([Intrare 2] = @Original_Intrare_2)) AND ((@IsNull_Intrare_3 = 1 AND [Intrare 3] IS NULL) OR ([Intrare 3] = @Original_Intrare_3)) AND ((@IsNull_Intrare_4 = 1 AND [Intrare 4] IS NULL) OR ([Intrare 4] = @Original_Intrare_4)) AND ((@IsNull_Intrare_5 = 1 AND [Intrare 5] IS NULL) OR ([Intrare 5] = @Original_Intrare_5)) AND ((@IsNull_Intrare_6 = 1 AND [Intrare 6] IS NULL) OR ([Intrare 6] = @Original_Intrare_6)) AND ((@IsNull_Intrare_7 = 1 AND [Intrare 7] IS NULL) OR ([Intrare 7] = @Original_Intrare_7)) AND ((@IsNull_Intrare_8 = 1 AND [Intrare 8] IS NULL) OR ([Intrare 8] = @Original_Intrare_8)) AND ([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Intrare_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intrare_1", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Intrare_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4060,12 +4059,12 @@ namespace ScheduleManager.dbDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intrare_7", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 7", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Intrare_8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intrare_8", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[customers] ([ID], [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8]) VALUES (@ID, @Nume_Client, @Telefon_Client, @Intrare_1, @Intrare_2, @Intrare_3, @Intrare_4, @Intrare_5, @Intrare_6, @Intrare_7, @Intrare_8);
-SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8] FROM customers WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [customers] ([Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8], [ID]) VALUES (@Nume_Client, @Telefon_Client, @Intrare_1, @Intrare_2, @Intrare_3, @Intrare_4, @Intrare_5, @Intrare_6, @Intrare_7, @Intrare_8, @ID);
+SELECT [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8], ID FROM customers WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nume_Client", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nume Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefon_Client", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_1", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4076,12 +4075,12 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_6", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_7", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_8", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[customers] SET [ID] = @ID, [Nume Client] = @Nume_Client, [Telefon Client] = @Telefon_Client, [Intrare 1] = @Intrare_1, [Intrare 2] = @Intrare_2, [Intrare 3] = @Intrare_3, [Intrare 4] = @Intrare_4, [Intrare 5] = @Intrare_5, [Intrare 6] = @Intrare_6, [Intrare 7] = @Intrare_7, [Intrare 8] = @Intrare_8 WHERE (([ID] = @Original_ID) AND ((@IsNull_Intrare_1 = 1 AND [Intrare 1] IS NULL) OR ([Intrare 1] = @Original_Intrare_1)) AND ((@IsNull_Intrare_2 = 1 AND [Intrare 2] IS NULL) OR ([Intrare 2] = @Original_Intrare_2)) AND ((@IsNull_Intrare_3 = 1 AND [Intrare 3] IS NULL) OR ([Intrare 3] = @Original_Intrare_3)) AND ((@IsNull_Intrare_4 = 1 AND [Intrare 4] IS NULL) OR ([Intrare 4] = @Original_Intrare_4)) AND ((@IsNull_Intrare_5 = 1 AND [Intrare 5] IS NULL) OR ([Intrare 5] = @Original_Intrare_5)) AND ((@IsNull_Intrare_6 = 1 AND [Intrare 6] IS NULL) OR ([Intrare 6] = @Original_Intrare_6)) AND ((@IsNull_Intrare_7 = 1 AND [Intrare 7] IS NULL) OR ([Intrare 7] = @Original_Intrare_7)) AND ((@IsNull_Intrare_8 = 1 AND [Intrare 8] IS NULL) OR ([Intrare 8] = @Original_Intrare_8)));
-SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8] FROM customers WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [customers] SET [Nume Client] = @Nume_Client, [Telefon Client] = @Telefon_Client, [Intrare 1] = @Intrare_1, [Intrare 2] = @Intrare_2, [Intrare 3] = @Intrare_3, [Intrare 4] = @Intrare_4, [Intrare 5] = @Intrare_5, [Intrare 6] = @Intrare_6, [Intrare 7] = @Intrare_7, [Intrare 8] = @Intrare_8, [ID] = @ID WHERE (((@IsNull_Intrare_1 = 1 AND [Intrare 1] IS NULL) OR ([Intrare 1] = @Original_Intrare_1)) AND ((@IsNull_Intrare_2 = 1 AND [Intrare 2] IS NULL) OR ([Intrare 2] = @Original_Intrare_2)) AND ((@IsNull_Intrare_3 = 1 AND [Intrare 3] IS NULL) OR ([Intrare 3] = @Original_Intrare_3)) AND ((@IsNull_Intrare_4 = 1 AND [Intrare 4] IS NULL) OR ([Intrare 4] = @Original_Intrare_4)) AND ((@IsNull_Intrare_5 = 1 AND [Intrare 5] IS NULL) OR ([Intrare 5] = @Original_Intrare_5)) AND ((@IsNull_Intrare_6 = 1 AND [Intrare 6] IS NULL) OR ([Intrare 6] = @Original_Intrare_6)) AND ((@IsNull_Intrare_7 = 1 AND [Intrare 7] IS NULL) OR ([Intrare 7] = @Original_Intrare_7)) AND ((@IsNull_Intrare_8 = 1 AND [Intrare 8] IS NULL) OR ([Intrare 8] = @Original_Intrare_8)) AND ([ID] = @Original_ID));
+SELECT [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8], ID FROM customers WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nume_Client", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nume Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Telefon_Client", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Telefon Client", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_1", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4092,7 +4091,7 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_6", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 6", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_7", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 7", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Intrare_8", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 8", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Intrare_1", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 1", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intrare_1", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 1", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Intrare_2", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 2", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4109,6 +4108,7 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intrare_7", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 7", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Intrare_8", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 8", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Intrare_8", global::System.Data.SqlDbType.SmallDateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Intrare 8", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4124,9 +4124,9 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3]" +
-                ", [Intrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8] FROM dbo.custo" +
-                "mers";
+            this._commandCollection[0].CommandText = "SELECT [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3], [I" +
+                "ntrare 4], [Intrare 5], [Intrare 6], [Intrare 7], [Intrare 8], ID FROM customers" +
+                "";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4187,72 +4187,72 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<global::System.DateTime> Original_Intrare_1, global::System.Nullable<global::System.DateTime> Original_Intrare_2, global::System.Nullable<global::System.DateTime> Original_Intrare_3, global::System.Nullable<global::System.DateTime> Original_Intrare_4, global::System.Nullable<global::System.DateTime> Original_Intrare_5, global::System.Nullable<global::System.DateTime> Original_Intrare_6, global::System.Nullable<global::System.DateTime> Original_Intrare_7, global::System.Nullable<global::System.DateTime> Original_Intrare_8) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
+        public virtual int Delete(global::System.Nullable<global::System.DateTime> Original_Intrare_1, global::System.Nullable<global::System.DateTime> Original_Intrare_2, global::System.Nullable<global::System.DateTime> Original_Intrare_3, global::System.Nullable<global::System.DateTime> Original_Intrare_4, global::System.Nullable<global::System.DateTime> Original_Intrare_5, global::System.Nullable<global::System.DateTime> Original_Intrare_6, global::System.Nullable<global::System.DateTime> Original_Intrare_7, global::System.Nullable<global::System.DateTime> Original_Intrare_8, int Original_ID) {
             if ((Original_Intrare_1.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_Intrare_1.Value));
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Intrare_1.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_2.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Intrare_2.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_Intrare_2.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_3.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Intrare_3.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Intrare_3.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_4.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Intrare_4.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_Intrare_4.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_5.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Intrare_5.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_Intrare_5.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_6.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Intrare_6.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((System.DateTime)(Original_Intrare_6.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_7.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Intrare_7.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((System.DateTime)(Original_Intrare_7.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_8.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_Intrare_8.Value));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((System.DateTime)(Original_Intrare_8.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
+            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4273,68 +4273,68 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string Nume_Client, string Telefon_Client, global::System.Nullable<global::System.DateTime> Intrare_1, global::System.Nullable<global::System.DateTime> Intrare_2, global::System.Nullable<global::System.DateTime> Intrare_3, global::System.Nullable<global::System.DateTime> Intrare_4, global::System.Nullable<global::System.DateTime> Intrare_5, global::System.Nullable<global::System.DateTime> Intrare_6, global::System.Nullable<global::System.DateTime> Intrare_7, global::System.Nullable<global::System.DateTime> Intrare_8) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(string Nume_Client, string Telefon_Client, global::System.Nullable<global::System.DateTime> Intrare_1, global::System.Nullable<global::System.DateTime> Intrare_2, global::System.Nullable<global::System.DateTime> Intrare_3, global::System.Nullable<global::System.DateTime> Intrare_4, global::System.Nullable<global::System.DateTime> Intrare_5, global::System.Nullable<global::System.DateTime> Intrare_6, global::System.Nullable<global::System.DateTime> Intrare_7, global::System.Nullable<global::System.DateTime> Intrare_8, int ID) {
             if ((Nume_Client == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Nume_Client));
+            }
+            if ((Telefon_Client == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Nume_Client));
-            }
-            if ((Telefon_Client == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Telefon_Client));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Telefon_Client));
             }
             if ((Intrare_1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Intrare_1.Value));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Intrare_1.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Intrare_2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Intrare_2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Intrare_2.Value));
+            if ((Intrare_3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Intrare_3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_3.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Intrare_3.Value));
+            if ((Intrare_4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Intrare_4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Intrare_4.Value));
+            if ((Intrare_5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Intrare_5.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_5.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Intrare_5.Value));
+            if ((Intrare_6.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Intrare_6.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_6.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Intrare_6.Value));
+            if ((Intrare_7.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Intrare_7.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_7.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Intrare_7.Value));
+            if ((Intrare_8.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Intrare_8.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_8.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Intrare_8.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4356,7 +4356,6 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int ID, 
                     string Nume_Client, 
                     string Telefon_Client, 
                     global::System.Nullable<global::System.DateTime> Intrare_1, 
@@ -4367,7 +4366,7 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
                     global::System.Nullable<global::System.DateTime> Intrare_6, 
                     global::System.Nullable<global::System.DateTime> Intrare_7, 
                     global::System.Nullable<global::System.DateTime> Intrare_8, 
-                    int Original_ID, 
+                    int ID, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_1, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_2, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_3, 
@@ -4375,133 +4374,134 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
                     global::System.Nullable<global::System.DateTime> Original_Intrare_5, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_6, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_7, 
-                    global::System.Nullable<global::System.DateTime> Original_Intrare_8) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+                    global::System.Nullable<global::System.DateTime> Original_Intrare_8, 
+                    int Original_ID) {
             if ((Nume_Client == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Nume_Client));
+            }
+            if ((Telefon_Client == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Nume_Client));
-            }
-            if ((Telefon_Client == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Telefon_Client));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Telefon_Client));
             }
             if ((Intrare_1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Intrare_1.Value));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Intrare_1.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Intrare_2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Intrare_2.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Intrare_2.Value));
+            if ((Intrare_3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Intrare_3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Intrare_3.Value));
+            if ((Intrare_4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Intrare_4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Intrare_4.Value));
+            if ((Intrare_5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Intrare_5.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Intrare_5.Value));
+            if ((Intrare_6.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Intrare_6.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_6.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Intrare_6.Value));
+            if ((Intrare_7.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Intrare_7.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Intrare_7.Value));
+            if ((Intrare_8.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Intrare_8.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Intrare_8.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Intrare_8.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID));
             if ((Original_Intrare_1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Intrare_1.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_Intrare_1.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Intrare_2.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Intrare_2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_Intrare_3.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_Intrare_3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_Intrare_4.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Intrare_4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_Intrare_5.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_Intrare_5.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_6.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_Intrare_6.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_Intrare_6.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_Intrare_7.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_Intrare_7.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             if ((Original_Intrare_8.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_Intrare_8.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_Intrare_8.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4533,7 +4533,6 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
                     global::System.Nullable<global::System.DateTime> Intrare_6, 
                     global::System.Nullable<global::System.DateTime> Intrare_7, 
                     global::System.Nullable<global::System.DateTime> Intrare_8, 
-                    int Original_ID, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_1, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_2, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_3, 
@@ -4541,8 +4540,9 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
                     global::System.Nullable<global::System.DateTime> Original_Intrare_5, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_6, 
                     global::System.Nullable<global::System.DateTime> Original_Intrare_7, 
-                    global::System.Nullable<global::System.DateTime> Original_Intrare_8) {
-            return this.Update(Original_ID, Nume_Client, Telefon_Client, Intrare_1, Intrare_2, Intrare_3, Intrare_4, Intrare_5, Intrare_6, Intrare_7, Intrare_8, Original_ID, Original_Intrare_1, Original_Intrare_2, Original_Intrare_3, Original_Intrare_4, Original_Intrare_5, Original_Intrare_6, Original_Intrare_7, Original_Intrare_8);
+                    global::System.Nullable<global::System.DateTime> Original_Intrare_8, 
+                    int Original_ID) {
+            return this.Update(Nume_Client, Telefon_Client, Intrare_1, Intrare_2, Intrare_3, Intrare_4, Intrare_5, Intrare_6, Intrare_7, Intrare_8, Original_ID, Original_Intrare_1, Original_Intrare_2, Original_Intrare_3, Original_Intrare_4, Original_Intrare_5, Original_Intrare_6, Original_Intrare_7, Original_Intrare_8, Original_ID);
         }
     }
     
@@ -4667,40 +4667,40 @@ SELECT ID, [Nume Client], [Telefon Client], [Intrare 1], [Intrare 2], [Intrare 3
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "friday";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("11:30 - 12:30", "11:30 - 12:30");
             tableMapping.ColumnMappings.Add("17:30 - 18:30", "17:30 - 18:30");
             tableMapping.ColumnMappings.Add("18:30 - 19:30", "18:30 - 19:30");
             tableMapping.ColumnMappings.Add("19:30 - 20:30", "19:30 - 20:30");
             tableMapping.ColumnMappings.Add("20:30 - 21:30", "20:30 - 21:30");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[friday] WHERE (([ID] = @Original_ID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [friday] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[friday] ([ID], [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30]) VALUES (@ID, @p1, @p4, @p7, @p10, @p13);
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM friday WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [friday] ([11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], [ID]) VALUES (@p1, @p4, @p7, @p10, @p13, @ID);
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM friday WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[friday] SET [ID] = @ID, [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13 WHERE (([ID] = @Original_ID));
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM friday WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [friday] SET [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13, [ID] = @ID WHERE (([ID] = @Original_ID));
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM friday WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -4717,8 +4717,8 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [2" +
-                "0:30 - 21:30] FROM dbo.friday";
+            this._commandCollection[0].CommandText = "SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30" +
+                " - 21:30], ID FROM friday";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4801,38 +4801,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string p1, string p4, string p7, string p10, string p13) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(string p1, string p4, string p7, string p10, string p13, int ID) {
             if ((p1 == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4853,38 +4853,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Update(string p1, string p4, string p7, string p10, string p13, int ID, int Original_ID) {
             if ((p1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4907,7 +4907,7 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            return this.Update(Original_ID, p1, p4, p7, p10, p13, Original_ID);
+            return this.Update(p1, p4, p7, p10, p13, Original_ID, Original_ID);
         }
     }
     
@@ -5032,40 +5032,40 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "monday";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("11:30 - 12:30", "11:30 - 12:30");
             tableMapping.ColumnMappings.Add("17:30 - 18:30", "17:30 - 18:30");
             tableMapping.ColumnMappings.Add("18:30 - 19:30", "18:30 - 19:30");
             tableMapping.ColumnMappings.Add("19:30 - 20:30", "19:30 - 20:30");
             tableMapping.ColumnMappings.Add("20:30 - 21:30", "20:30 - 21:30");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[monday] WHERE (([ID] = @Original_ID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [monday] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[monday] ([ID], [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30]) VALUES (@ID, @p1, @p4, @p7, @p10, @p13);
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM monday WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [monday] ([11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], [ID]) VALUES (@p1, @p4, @p7, @p10, @p13, @ID);
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM monday WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[monday] SET [ID] = @ID, [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13 WHERE (([ID] = @Original_ID));
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM monday WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [monday] SET [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13, [ID] = @ID WHERE (([ID] = @Original_ID));
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM monday WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5082,8 +5082,8 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [2" +
-                "0:30 - 21:30] FROM dbo.monday";
+            this._commandCollection[0].CommandText = "SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30" +
+                " - 21:30], ID FROM monday";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5166,38 +5166,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string p1, string p4, string p7, string p10, string p13) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(string p1, string p4, string p7, string p10, string p13, int ID) {
             if ((p1 == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5218,38 +5218,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Update(string p1, string p4, string p7, string p10, string p13, int ID, int Original_ID) {
             if ((p1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5272,7 +5272,7 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            return this.Update(Original_ID, p1, p4, p7, p10, p13, Original_ID);
+            return this.Update(p1, p4, p7, p10, p13, Original_ID, Original_ID);
         }
     }
     
@@ -5397,40 +5397,40 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "thursday";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("11:30 - 12:30", "11:30 - 12:30");
             tableMapping.ColumnMappings.Add("17:30 - 18:30", "17:30 - 18:30");
             tableMapping.ColumnMappings.Add("18:30 - 19:30", "18:30 - 19:30");
             tableMapping.ColumnMappings.Add("19:30 - 20:30", "19:30 - 20:30");
             tableMapping.ColumnMappings.Add("20:30 - 21:30", "20:30 - 21:30");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[thursday] WHERE (([ID] = @Original_ID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [thursday] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[thursday] ([ID], [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30]) VALUES (@ID, @p1, @p4, @p7, @p10, @p13);
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM thursday WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [thursday] ([11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], [ID]) VALUES (@p1, @p4, @p7, @p10, @p13, @ID);
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM thursday WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[thursday] SET [ID] = @ID, [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13 WHERE (([ID] = @Original_ID));
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM thursday WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [thursday] SET [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13, [ID] = @ID WHERE (([ID] = @Original_ID));
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM thursday WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5447,8 +5447,8 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [2" +
-                "0:30 - 21:30] FROM dbo.thursday";
+            this._commandCollection[0].CommandText = "SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30" +
+                " - 21:30], ID FROM thursday";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5531,38 +5531,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string p1, string p4, string p7, string p10, string p13) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(string p1, string p4, string p7, string p10, string p13, int ID) {
             if ((p1 == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5583,38 +5583,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Update(string p1, string p4, string p7, string p10, string p13, int ID, int Original_ID) {
             if ((p1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5637,7 +5637,7 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            return this.Update(Original_ID, p1, p4, p7, p10, p13, Original_ID);
+            return this.Update(p1, p4, p7, p10, p13, Original_ID, Original_ID);
         }
     }
     
@@ -5762,40 +5762,40 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "tuesday";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("11:30 - 12:30", "11:30 - 12:30");
             tableMapping.ColumnMappings.Add("17:30 - 18:30", "17:30 - 18:30");
             tableMapping.ColumnMappings.Add("18:30 - 19:30", "18:30 - 19:30");
             tableMapping.ColumnMappings.Add("19:30 - 20:30", "19:30 - 20:30");
             tableMapping.ColumnMappings.Add("20:30 - 21:30", "20:30 - 21:30");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[tuesday] WHERE (([ID] = @Original_ID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [tuesday] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[tuesday] ([ID], [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30]) VALUES (@ID, @p1, @p4, @p7, @p10, @p13);
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM tuesday WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [tuesday] ([11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], [ID]) VALUES (@p1, @p4, @p7, @p10, @p13, @ID);
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM tuesday WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[tuesday] SET [ID] = @ID, [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13 WHERE (([ID] = @Original_ID));
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM tuesday WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [tuesday] SET [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13, [ID] = @ID WHERE (([ID] = @Original_ID));
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM tuesday WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -5812,8 +5812,8 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [2" +
-                "0:30 - 21:30] FROM dbo.tuesday";
+            this._commandCollection[0].CommandText = "SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30" +
+                " - 21:30], ID FROM tuesday";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5896,38 +5896,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string p1, string p4, string p7, string p10, string p13) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(string p1, string p4, string p7, string p10, string p13, int ID) {
             if ((p1 == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5948,38 +5948,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Update(string p1, string p4, string p7, string p10, string p13, int ID, int Original_ID) {
             if ((p1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6002,7 +6002,7 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            return this.Update(Original_ID, p1, p4, p7, p10, p13, Original_ID);
+            return this.Update(p1, p4, p7, p10, p13, Original_ID, Original_ID);
         }
     }
     
@@ -6127,40 +6127,40 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "wednesday";
-            tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("11:30 - 12:30", "11:30 - 12:30");
             tableMapping.ColumnMappings.Add("17:30 - 18:30", "17:30 - 18:30");
             tableMapping.ColumnMappings.Add("18:30 - 19:30", "18:30 - 19:30");
             tableMapping.ColumnMappings.Add("19:30 - 20:30", "19:30 - 20:30");
             tableMapping.ColumnMappings.Add("20:30 - 21:30", "20:30 - 21:30");
+            tableMapping.ColumnMappings.Add("ID", "ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[wednesday] WHERE (([ID] = @Original_ID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [wednesday] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[wednesday] ([ID], [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30]) VALUES (@ID, @p1, @p4, @p7, @p10, @p13);
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM wednesday WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [wednesday] ([11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], [ID]) VALUES (@p1, @p4, @p7, @p10, @p13, @ID);
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM wednesday WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[wednesday] SET [ID] = @ID, [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13 WHERE (([ID] = @Original_ID));
-SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30] FROM wednesday WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [wednesday] SET [11:30 - 12:30] = @p1, [17:30 - 18:30] = @p4, [18:30 - 19:30] = @p7, [19:30 - 20:30] = @p10, [20:30 - 21:30] = @p13, [ID] = @ID WHERE (([ID] = @Original_ID));
+SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30 - 21:30], ID FROM wednesday WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "11:30 - 12:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p4", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "17:30 - 18:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p7", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "18:30 - 19:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p10", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "19:30 - 20:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p13", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "20:30 - 21:30", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -6177,8 +6177,8 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [2" +
-                "0:30 - 21:30] FROM dbo.wednesday";
+            this._commandCollection[0].CommandText = "SELECT [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [20:30" +
+                " - 21:30], ID FROM wednesday";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6261,38 +6261,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, string p1, string p4, string p7, string p10, string p13) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Insert(string p1, string p4, string p7, string p10, string p13, int ID) {
             if ((p1 == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6313,38 +6313,38 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
+        public virtual int Update(string p1, string p4, string p7, string p10, string p13, int ID, int Original_ID) {
             if ((p1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(p1));
+            }
+            if ((p4 == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p1));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(p4));
             }
-            if ((p4 == null)) {
+            if ((p7 == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p4));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(p7));
             }
-            if ((p7 == null)) {
+            if ((p10 == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p7));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(p10));
             }
-            if ((p10 == null)) {
+            if ((p13 == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p10));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(p13));
             }
-            if ((p13 == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(p13));
-            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ID));
             this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -6367,7 +6367,7 @@ SELECT ID, [11:30 - 12:30], [17:30 - 18:30], [18:30 - 19:30], [19:30 - 20:30], [
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string p1, string p4, string p7, string p10, string p13, int Original_ID) {
-            return this.Update(Original_ID, p1, p4, p7, p10, p13, Original_ID);
+            return this.Update(p1, p4, p7, p10, p13, Original_ID, Original_ID);
         }
     }
     
