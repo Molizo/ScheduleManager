@@ -2,3 +2,4 @@ open mihneavisoiu.ro
 app@mihneavisoiu.ro
 passwordABCDE
 send "installer.exe"
+quit
