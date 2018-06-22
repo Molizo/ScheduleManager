@@ -77,5 +77,24 @@ namespace ScheduleManager
         {
             Console.WriteLine(mondayDataGridView.SelectedCells);        
         }
+
+        private void deleteSelectedCustomerEntriesButton_click(object sender,EventArgs e)
+        {
+            long index;
+            index = customersDataGridView.CurrentCell.RowIndex;
+            string query = "UPDATE [customers] \n"+
+                           "SET [Intrare 1] = NULL, [Intrare 2] = NULL, [Intrare 3] = NULL, [Intrare 4] = NULL, [Intrare 5] = NULL, [Intrare 6] = NULL, [Intrare 7] = NULL, [Intrare 8] = NULL\n" +
+                           "WHERE ID = " + index;
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.dbConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+            this.customersTableAdapter.Fill(this.dbDataSet.customers);
+        }
+        
     }
 }

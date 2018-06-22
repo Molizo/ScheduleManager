@@ -40,6 +40,8 @@
             this.viewCustomerDataTab = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.customersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dbDataSet = new ScheduleManager.dbDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -55,22 +57,9 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.customersDataGridView = new System.Windows.Forms.DataGridView();
-            this.modifyScheduleTab = new System.Windows.Forms.TabPage();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.mondayDataGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tuesdayDataGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.wednesdayDataGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.thursdayDataGridView = new System.Windows.Forms.DataGridView();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.fridayDataGridView = new System.Windows.Forms.DataGridView();
-            this.presenceTab = new System.Windows.Forms.TabPage();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbDataSet = new ScheduleManager.dbDataSet();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,36 +70,49 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifyScheduleTab = new System.Windows.Forms.TabPage();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.mondayDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mondayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tuesdayDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tuesdayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.wednesdayDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wednesdayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.thursdayDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thursdayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.fridayDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fridayBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.presenceTab = new System.Windows.Forms.TabPage();
             this.customersTableAdapter = new ScheduleManager.dbDataSetTableAdapters.customersTableAdapter();
             this.tableAdapterManager = new ScheduleManager.dbDataSetTableAdapters.TableAdapterManager();
             this.mondayTableAdapter = new ScheduleManager.dbDataSetTableAdapters.mondayTableAdapter();
@@ -125,25 +127,25 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
             this.customersBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
             this.modifyScheduleTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mondayDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mondayBindingSource)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tuesdayDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tuesdayBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wednesdayDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wednesdayBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.thursdayDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thursdayBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fridayDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mondayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tuesdayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wednesdayBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thursdayBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fridayBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,7 +225,7 @@
             this.modifyScheduleButton.Name = "modifyScheduleButton";
             this.modifyScheduleButton.Size = new System.Drawing.Size(106, 50);
             this.modifyScheduleButton.TabIndex = 2;
-            this.modifyScheduleButton.Text = "Modifica program";
+            this.modifyScheduleButton.Text = "Vizualizeaza program";
             this.modifyScheduleButton.UseVisualStyleBackColor = true;
             this.modifyScheduleButton.Click += new System.EventHandler(this.ModifyScheduleButton_Click);
             // 
@@ -307,7 +309,9 @@
             this.toolStripSeparator1,
             this.toolStripLabel1,
             this.toolStripTextBox1,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripSeparator2,
+            this.toolStripButton2});
             this.customersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.customersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.customersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -318,6 +322,16 @@
             this.customersBindingNavigator.Size = new System.Drawing.Size(963, 27);
             this.customersBindingNavigator.TabIndex = 1;
             this.customersBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // customersBindingSource
+            // 
+            this.customersBindingSource.DataMember = "customers";
+            this.customersBindingSource.DataSource = this.dbDataSet;
+            // 
+            // dbDataSet
+            // 
+            this.dbDataSet.DataSetName = "dbDataSet";
+            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -431,7 +445,22 @@
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Text = "Cauta client";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 24);
+            this.toolStripButton2.Text = "Sterge Intrarile";
+            this.toolStripButton2.Click += new System.EventHandler(this.deleteSelectedCustomerEntriesButton_click);
             // 
             // customersDataGridView
             // 
@@ -458,204 +487,6 @@
             this.customersDataGridView.RowHeadersVisible = false;
             this.customersDataGridView.Size = new System.Drawing.Size(957, 557);
             this.customersDataGridView.TabIndex = 0;
-            // 
-            // modifyScheduleTab
-            // 
-            this.modifyScheduleTab.Controls.Add(this.tabControl2);
-            this.modifyScheduleTab.Location = new System.Drawing.Point(4, 30);
-            this.modifyScheduleTab.Name = "modifyScheduleTab";
-            this.modifyScheduleTab.Size = new System.Drawing.Size(965, 593);
-            this.modifyScheduleTab.TabIndex = 2;
-            this.modifyScheduleTab.Text = "mod";
-            this.modifyScheduleTab.UseVisualStyleBackColor = true;
-            // 
-            // tabControl2
-            // 
-            this.tabControl2.Controls.Add(this.tabPage1);
-            this.tabControl2.Controls.Add(this.tabPage2);
-            this.tabControl2.Controls.Add(this.tabPage3);
-            this.tabControl2.Controls.Add(this.tabPage4);
-            this.tabControl2.Controls.Add(this.tabPage5);
-            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tabControl2.ItemSize = new System.Drawing.Size(50, 26);
-            this.tabControl2.Location = new System.Drawing.Point(0, 0);
-            this.tabControl2.Name = "tabControl2";
-            this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(965, 593);
-            this.tabControl2.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.mondayDataGridView);
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(957, 559);
-            this.tabPage1.TabIndex = 5;
-            this.tabPage1.Text = "Luni";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // mondayDataGridView
-            // 
-            this.mondayDataGridView.AutoGenerateColumns = false;
-            this.mondayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.mondayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mondayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18});
-            this.mondayDataGridView.DataSource = this.mondayBindingSource;
-            this.mondayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mondayDataGridView.EnableHeadersVisualStyles = false;
-            this.mondayDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.mondayDataGridView.Name = "mondayDataGridView";
-            this.mondayDataGridView.RowHeadersVisible = false;
-            this.mondayDataGridView.Size = new System.Drawing.Size(957, 559);
-            this.mondayDataGridView.TabIndex = 0;
-            this.mondayDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mondayDataGridView_CellContentClick);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.tuesdayDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(957, 559);
-            this.tabPage2.TabIndex = 6;
-            this.tabPage2.Text = "Marti";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tuesdayDataGridView
-            // 
-            this.tuesdayDataGridView.AutoGenerateColumns = false;
-            this.tuesdayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.tuesdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tuesdayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24});
-            this.tuesdayDataGridView.DataSource = this.tuesdayBindingSource;
-            this.tuesdayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tuesdayDataGridView.EnableHeadersVisualStyles = false;
-            this.tuesdayDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.tuesdayDataGridView.Name = "tuesdayDataGridView";
-            this.tuesdayDataGridView.RowHeadersVisible = false;
-            this.tuesdayDataGridView.Size = new System.Drawing.Size(957, 559);
-            this.tuesdayDataGridView.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.wednesdayDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 30);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(957, 559);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Miercuri";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // wednesdayDataGridView
-            // 
-            this.wednesdayDataGridView.AutoGenerateColumns = false;
-            this.wednesdayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.wednesdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.wednesdayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30});
-            this.wednesdayDataGridView.DataSource = this.wednesdayBindingSource;
-            this.wednesdayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wednesdayDataGridView.EnableHeadersVisualStyles = false;
-            this.wednesdayDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.wednesdayDataGridView.Name = "wednesdayDataGridView";
-            this.wednesdayDataGridView.RowHeadersVisible = false;
-            this.wednesdayDataGridView.Size = new System.Drawing.Size(957, 559);
-            this.wednesdayDataGridView.TabIndex = 0;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.AutoScroll = true;
-            this.tabPage4.Controls.Add(this.thursdayDataGridView);
-            this.tabPage4.Location = new System.Drawing.Point(4, 30);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(957, 559);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Joi";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // thursdayDataGridView
-            // 
-            this.thursdayDataGridView.AutoGenerateColumns = false;
-            this.thursdayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.thursdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.thursdayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36});
-            this.thursdayDataGridView.DataSource = this.thursdayBindingSource;
-            this.thursdayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thursdayDataGridView.EnableHeadersVisualStyles = false;
-            this.thursdayDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.thursdayDataGridView.Name = "thursdayDataGridView";
-            this.thursdayDataGridView.RowHeadersVisible = false;
-            this.thursdayDataGridView.Size = new System.Drawing.Size(957, 559);
-            this.thursdayDataGridView.TabIndex = 0;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.fridayDataGridView);
-            this.tabPage5.Location = new System.Drawing.Point(4, 30);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(957, 559);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Vineri";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // fridayDataGridView
-            // 
-            this.fridayDataGridView.AutoGenerateColumns = false;
-            this.fridayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.fridayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.fridayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn38,
-            this.dataGridViewTextBoxColumn39,
-            this.dataGridViewTextBoxColumn40,
-            this.dataGridViewTextBoxColumn41,
-            this.dataGridViewTextBoxColumn42});
-            this.fridayDataGridView.DataSource = this.fridayBindingSource;
-            this.fridayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fridayDataGridView.EnableHeadersVisualStyles = false;
-            this.fridayDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.fridayDataGridView.Name = "fridayDataGridView";
-            this.fridayDataGridView.RowHeadersVisible = false;
-            this.fridayDataGridView.Size = new System.Drawing.Size(957, 559);
-            this.fridayDataGridView.TabIndex = 0;
-            // 
-            // presenceTab
-            // 
-            this.presenceTab.Location = new System.Drawing.Point(4, 30);
-            this.presenceTab.Name = "presenceTab";
-            this.presenceTab.Size = new System.Drawing.Size(965, 593);
-            this.presenceTab.TabIndex = 3;
-            this.presenceTab.Text = "pres";
-            this.presenceTab.UseVisualStyleBackColor = true;
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "customers";
-            this.customersBindingSource.DataSource = this.dbDataSet;
-            // 
-            // dbDataSet
-            // 
-            this.dbDataSet.DataSetName = "dbDataSet";
-            this.dbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -727,6 +558,63 @@
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 71;
             // 
+            // modifyScheduleTab
+            // 
+            this.modifyScheduleTab.Controls.Add(this.tabControl2);
+            this.modifyScheduleTab.Location = new System.Drawing.Point(4, 30);
+            this.modifyScheduleTab.Name = "modifyScheduleTab";
+            this.modifyScheduleTab.Size = new System.Drawing.Size(965, 593);
+            this.modifyScheduleTab.TabIndex = 2;
+            this.modifyScheduleTab.Text = "mod";
+            this.modifyScheduleTab.UseVisualStyleBackColor = true;
+            // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Controls.Add(this.tabPage5);
+            this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tabControl2.ItemSize = new System.Drawing.Size(50, 26);
+            this.tabControl2.Location = new System.Drawing.Point(0, 0);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(965, 593);
+            this.tabControl2.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.mondayDataGridView);
+            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(957, 559);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "Luni";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // mondayDataGridView
+            // 
+            this.mondayDataGridView.AutoGenerateColumns = false;
+            this.mondayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.mondayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mondayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18});
+            this.mondayDataGridView.DataSource = this.mondayBindingSource;
+            this.mondayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mondayDataGridView.EnableHeadersVisualStyles = false;
+            this.mondayDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.mondayDataGridView.Name = "mondayDataGridView";
+            this.mondayDataGridView.RowHeadersVisible = false;
+            this.mondayDataGridView.Size = new System.Drawing.Size(957, 559);
+            this.mondayDataGridView.TabIndex = 0;
+            this.mondayDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mondayDataGridView_CellContentClick);
+            // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.DataPropertyName = "11:30 - 12:30";
@@ -766,6 +654,36 @@
             // 
             this.mondayBindingSource.DataMember = "monday";
             this.mondayBindingSource.DataSource = this.dbDataSet;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.tuesdayDataGridView);
+            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(957, 559);
+            this.tabPage2.TabIndex = 6;
+            this.tabPage2.Text = "Marti";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tuesdayDataGridView
+            // 
+            this.tuesdayDataGridView.AutoGenerateColumns = false;
+            this.tuesdayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tuesdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tuesdayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24});
+            this.tuesdayDataGridView.DataSource = this.tuesdayBindingSource;
+            this.tuesdayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tuesdayDataGridView.EnableHeadersVisualStyles = false;
+            this.tuesdayDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.tuesdayDataGridView.Name = "tuesdayDataGridView";
+            this.tuesdayDataGridView.RowHeadersVisible = false;
+            this.tuesdayDataGridView.Size = new System.Drawing.Size(957, 559);
+            this.tuesdayDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn20
             // 
@@ -807,6 +725,37 @@
             this.tuesdayBindingSource.DataMember = "tuesday";
             this.tuesdayBindingSource.DataSource = this.dbDataSet;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.wednesdayDataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 30);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(957, 559);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Miercuri";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // wednesdayDataGridView
+            // 
+            this.wednesdayDataGridView.AutoGenerateColumns = false;
+            this.wednesdayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.wednesdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wednesdayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30});
+            this.wednesdayDataGridView.DataSource = this.wednesdayBindingSource;
+            this.wednesdayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wednesdayDataGridView.EnableHeadersVisualStyles = false;
+            this.wednesdayDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.wednesdayDataGridView.Name = "wednesdayDataGridView";
+            this.wednesdayDataGridView.RowHeadersVisible = false;
+            this.wednesdayDataGridView.Size = new System.Drawing.Size(957, 559);
+            this.wednesdayDataGridView.TabIndex = 0;
+            // 
             // dataGridViewTextBoxColumn26
             // 
             this.dataGridViewTextBoxColumn26.DataPropertyName = "11:30 - 12:30";
@@ -846,6 +795,37 @@
             // 
             this.wednesdayBindingSource.DataMember = "wednesday";
             this.wednesdayBindingSource.DataSource = this.dbDataSet;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.AutoScroll = true;
+            this.tabPage4.Controls.Add(this.thursdayDataGridView);
+            this.tabPage4.Location = new System.Drawing.Point(4, 30);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(957, 559);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Joi";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // thursdayDataGridView
+            // 
+            this.thursdayDataGridView.AutoGenerateColumns = false;
+            this.thursdayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.thursdayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.thursdayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36});
+            this.thursdayDataGridView.DataSource = this.thursdayBindingSource;
+            this.thursdayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thursdayDataGridView.EnableHeadersVisualStyles = false;
+            this.thursdayDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.thursdayDataGridView.Name = "thursdayDataGridView";
+            this.thursdayDataGridView.RowHeadersVisible = false;
+            this.thursdayDataGridView.Size = new System.Drawing.Size(957, 559);
+            this.thursdayDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn32
             // 
@@ -887,6 +867,36 @@
             this.thursdayBindingSource.DataMember = "thursday";
             this.thursdayBindingSource.DataSource = this.dbDataSet;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.fridayDataGridView);
+            this.tabPage5.Location = new System.Drawing.Point(4, 30);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(957, 559);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Vineri";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // fridayDataGridView
+            // 
+            this.fridayDataGridView.AutoGenerateColumns = false;
+            this.fridayDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.fridayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fridayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn39,
+            this.dataGridViewTextBoxColumn40,
+            this.dataGridViewTextBoxColumn41,
+            this.dataGridViewTextBoxColumn42});
+            this.fridayDataGridView.DataSource = this.fridayBindingSource;
+            this.fridayDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fridayDataGridView.EnableHeadersVisualStyles = false;
+            this.fridayDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.fridayDataGridView.Name = "fridayDataGridView";
+            this.fridayDataGridView.RowHeadersVisible = false;
+            this.fridayDataGridView.Size = new System.Drawing.Size(957, 559);
+            this.fridayDataGridView.TabIndex = 0;
+            // 
             // dataGridViewTextBoxColumn38
             // 
             this.dataGridViewTextBoxColumn38.DataPropertyName = "11:30 - 12:30";
@@ -926,6 +936,15 @@
             // 
             this.fridayBindingSource.DataMember = "friday";
             this.fridayBindingSource.DataSource = this.dbDataSet;
+            // 
+            // presenceTab
+            // 
+            this.presenceTab.Location = new System.Drawing.Point(4, 30);
+            this.presenceTab.Name = "presenceTab";
+            this.presenceTab.Size = new System.Drawing.Size(965, 593);
+            this.presenceTab.TabIndex = 3;
+            this.presenceTab.Text = "pres";
+            this.presenceTab.UseVisualStyleBackColor = true;
             // 
             // customersTableAdapter
             // 
@@ -982,25 +1001,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).EndInit();
             this.customersBindingNavigator.ResumeLayout(false);
             this.customersBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
             this.modifyScheduleTab.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mondayDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mondayBindingSource)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tuesdayDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tuesdayBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wednesdayDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wednesdayBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.thursdayDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.thursdayBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fridayDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mondayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tuesdayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wednesdayBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.thursdayBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fridayBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1104,6 +1123,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
         private System.Windows.Forms.TabPage presenceTab;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
 
